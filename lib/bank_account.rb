@@ -24,6 +24,10 @@ class BankAccount
     balance > 0 && status == "open"
   end
   
+  def sufficient_funds?
+    balance > amount
+  end
+  
   def close_account
     @status = "closed"
   end
