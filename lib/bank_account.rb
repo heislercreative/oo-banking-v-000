@@ -1,5 +1,5 @@
 class BankAccount
-  attr_accessor :status, :balance, :Transfer, :amount
+  attr_accessor :status, :balance, :transfer
   attr_reader :name
   
   def initialize(name)
@@ -13,7 +13,7 @@ class BankAccount
   end
   
   def withdraw(amount)
-    @balance -= Transfer.amount
+    @balance -= transfer.amount
   end
 
   def display_balance
