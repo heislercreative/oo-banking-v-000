@@ -14,7 +14,7 @@ class Transfer
   end
 
   def sufficient_funds?
-    @balance > amount
+    BankAccount.balance > amount
   end
   
   #def receiver_sufficient_funds?
