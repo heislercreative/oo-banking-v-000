@@ -13,13 +13,13 @@ class Transfer
     sender.valid? && receiver.valid?
   end
 
-  def sender_sufficient_funds?
-    sender.balance > amount
+  def sufficient_funds?
+    @balance > amount
   end
   
-  def receiver_sufficient_funds?
-    receiver.balance > amount
-  end
+  #def receiver_sufficient_funds?
+  #  receiver.balance > amount
+  #end
 
   def execute_transaction
     if valid? && sender_sufficient_funds? && self.status == "pending"
