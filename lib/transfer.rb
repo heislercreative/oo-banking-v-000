@@ -13,6 +13,10 @@ class Transfer
     sender.valid? && receiver.valid?
   end
 
+  def sufficient_funds?
+    sender.balance > amount
+  end
+
   def execute_transaction
     if valid? && sender.balance > amount && self.status = "pending"
       sender.withdraw(amount)
