@@ -35,7 +35,7 @@ class Transfer
     if valid? && receiver_sufficient_funds? && self.status == "complete"
       receiver.withdraw(amount)
       sender.deposit(amount)
-      self.status = "complete"
+      self.status = "reversed"
     else
       invalid_transfer
     end
