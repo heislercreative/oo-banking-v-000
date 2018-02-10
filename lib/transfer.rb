@@ -26,6 +26,10 @@ class Transfer
       invalid_transfer
     end
   end
+  
+  def reverse_transfer
+    if 
+  end
 
   def invalid_transfer
     self.status = "rejected"
