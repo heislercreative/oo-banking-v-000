@@ -12,10 +12,6 @@ class Transfer
   def valid?
     sender.valid? && receiver.valid?
   end
-
-  def sufficient_funds?
-    BankAccount.balance > amount
-  end
   
   #def receiver_sufficient_funds?
   #  receiver.balance > amount
