@@ -14,7 +14,7 @@ class Transfer
   end
 
   def sufficient_funds?
-    sender.balance > amount
+    self.balance > amount
   end
 
   def execute_transaction
