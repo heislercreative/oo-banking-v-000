@@ -23,12 +23,13 @@ class Transfer
       receiver.deposit(amount)
       self.status = "complete"
     else
-      "Transaction rejected. Please check your account balance."
+      invalid_transfer
     end
   end
 
   def invalid_transfer
     
+    "Transaction rejected. Please check your account balance."
   end
   
 end
