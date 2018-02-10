@@ -13,12 +13,16 @@ class Transfer
     sender.valid? && receiver.valid?
   end
   
-  #def receiver_sufficient_funds?
-  #  receiver.balance > amount
-  #end
+  def sender_sufficient_funds?
+    sender.balance > amount
+  end
+  
+  def receiver_sufficient_funds?
+    receiver.balance > amount
+  end
 
   def execute_transaction
-    if valid? && sender.sufficient_funds? && self.status == "pending"
+    if valid? && sender_sufficient_funds? && self.status == "pending"
       sender.withdraw(amount)
       receiver.deposit(amount)
       self.status = "complete"
@@ -28,7 +32,7 @@ class Transfer
   end
   
   def reverse_transfer
-    if valid? && receiver.sufficient_funds? && self.status == "complete"
+    if valid? && receiver_sufficient_funds? && self.status == "complete"
       receiver.withdraw(amount)
       sender.deposit(amount)
       self.status = "reversed"
