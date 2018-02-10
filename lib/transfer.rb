@@ -33,8 +33,8 @@ class Transfer
   
   def reverse_transfer
     if valid? && receiver_sufficient_funds? && self.status == "complete"
-      sender.withdraw(amount)
-      receiver.deposit(amount)
+      receiver.withdraw(amount)
+      sender.deposit(amount)
       self.status = "complete"
     else
       invalid_transfer
