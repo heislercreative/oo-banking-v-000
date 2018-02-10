@@ -13,7 +13,7 @@ class Transfer
     sender.valid? && receiver.valid?
   end
 
-  def sufficient_funds?
+  def sender_sufficient_funds?
     sender.balance > amount
   end
 
@@ -28,7 +28,7 @@ class Transfer
   end
   
   def reverse_transfer
-    if 
+    
   end
 
   def invalid_transfer
